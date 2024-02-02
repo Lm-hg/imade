@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services de I.MADE</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            overflow: hidden;
+        }
+
+        .loader {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 16px solid #f3f3f3;
+            border-top: 16px solid #3498db;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 1s linear infinite;
+            z-index: 999;
+            display: none;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .service {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .animated {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s, transform 0.8s;
+        }
+
+        .fadeInUp {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="loader"></div>
+
+    <header>
+        <h1>Services de I.MADE</h1>
+    </header>
+    <a href="https://imade.lovestoblog.com" style="text-decoration: none; color: #007BFF; font-weight: bold; padding: 8px 16px; border: 2px solid #333; border-radius: 4px; background-color: #fff; transition: background-color 0.3s, color 0.3s;">
+        Commencer
+      </a>
+          <section class="service animated">
+        <h2>Au vendeur</h2>
+        <p>Le site offre une plateforme conviviale aux utilisateurs qui possèdent une petite boutique, proposent des services, ou ont des articles inutilisés. Ces utilisateurs ont la possibilité de mettre en vente leurs produits ou services sur le site. Que ce soit une petite entreprise, des services personnalisés, ou des articles dont ils souhaitent se séparer, notre plateforme offre une solution simple et efficace pour présenter et commercialiser leurs offres en ligne.</p>
+    </section>
+
+    <section class="service animated">
+        <h2>Service d'Articles Personnalisés</h2>
+        <p>Faites votre choix parmi une variété d'articles personnalisables. Ajoutez des photos, des descriptions, et plus encore.</p>
+    </section>
+
+    <section class="service animated">
+        <h2>Adhésion Annuelle</h2>
+        <p>Optez pour notre adhésion annuelle pour bénéficier d'avantages exclusifs. Payez 50 euros pour un accès illimité pendant un an.</p>
+    </section>
+
+    <section class="service animated">
+        <h2>Service de Livraison (Futur)</h2>
+        <p>À mesure que notre site se développe, nous envisageons d'ajouter un service de livraison pour nos clients en France lorsque le nombre d'articles atteint 5 millions.</p>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const animatedElements = document.querySelectorAll('.animated');
+            const loader = document.querySelector('.loader');
+
+            // Show loader while the content is loading
+            loader.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+
+            animatedElements.forEach(element => {
+                element.classList.add('fadeInUp');
+            });
+
+            // Hide loader once the content is loaded
+            setTimeout(() => {
+                loader.style.display = 'none';
+                document.body.style.overflow = 'visible';
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
